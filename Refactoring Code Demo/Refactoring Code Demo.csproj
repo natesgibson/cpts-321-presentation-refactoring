@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Refactoring Code Demo.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,11 +47,17 @@
     <Compile Include="ConsoleMenu.cs" />
     <Compile Include="Cylinder.cs" />
     <Compile Include="Cylinders.cs" />
+    <Compile Include="FlipFlops.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Pants.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shape.cs" />
+    <Compile Include="Shirt.cs" />
     <Compile Include="SquareRefactored.cs" />
     <Compile Include="Square.cs" />
+    <Compile Include="Sunglasses.cs" />
     <Compile Include="TriangleRefactored.cs" />
     <Compile Include="Triangle.cs" />
   </ItemGroup>

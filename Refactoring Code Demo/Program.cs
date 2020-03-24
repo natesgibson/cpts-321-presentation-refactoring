@@ -30,7 +30,10 @@ namespace Refactoring_Code_Demo
             menu.Label = "Code Refactorings Demo!";
 
             menu.PushMenuSelection("1) Extract Variable");
-            menu.PushMenuSelection("5) Extracting Class Variable");
+            menu.PushMenuSelection("2) Replace Nested Conditionals with Guard Clauses");
+            menu.PushMenuSelection("3) Replace Conditional with Polymorphism");
+            menu.PushMenuSelection("4) Replace Constructor with Factory Function");
+            menu.PushMenuSelection("5) Extract Superclass");
             menu.PushMenuSelection("0) Exit");
 
             int userInput = -1;
@@ -64,7 +67,21 @@ namespace Refactoring_Code_Demo
 
                         break;
 
-                    // Extract Variable
+                    // Replace Nested Conditionals with Guard Clauses
+                    case 2:
+                        break;
+
+                    // Replace Conditional with Polymorphism
+                    case 3:
+                        PrintPrices();
+                        Console.ReadKey();
+                        break;
+
+                    // Replace Constructor with Factory Function
+                    case 4:
+                        break;
+
+                    // Extract Superclass
                     case 5:
                         Triangle triangle = new Triangle();
                         Square square = new Square();
@@ -85,6 +102,48 @@ namespace Refactoring_Code_Demo
 
                         break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// For case 3 - Replace Conditional with Polymorphism:
+        /// Prints the prices of 4 products using the conditionals and polymorphism methods.
+        /// </summary>
+        internal static void PrintPrices()
+        {
+            Console.WriteLine("Conditionals Prices:");
+            Console.WriteLine("  Pants cost:      $" + GetPrice(new Pants()));
+            Console.WriteLine("  Shirts cost:     $" + GetPrice(new Shirt()));
+            Console.WriteLine("  Flip Flops cost: $" + GetPrice(new FlipFlops()));
+            Console.WriteLine("  Sunglasses cost: $" + GetPrice(new Sunglasses()) + "     whoops, forgot to add it to the switch!");
+            Console.WriteLine();
+
+            Console.WriteLine("Polymorphism Prices:");
+            Console.WriteLine("  Pants cost:      $" + new Pants().GetPrice());
+            Console.WriteLine("  Shirts cost:     $" + new Shirt().GetPrice());
+            Console.WriteLine("  Flip Flops cost: $" + new FlipFlops().GetPrice());
+            Console.WriteLine("  Sunglasses cost: $" + new Sunglasses().GetPrice());
+            Console.WriteLine();
+        }
+
+        /// <summary>
+        /// For case 3 - Replace Conditional with Polymorphism:
+        /// Takes a product and returns its price.
+        /// </summary>
+        /// <param name="product">A product.</param>
+        /// <returns>Price of the product.</returns>
+        internal static double GetPrice(Product product)
+        {
+            switch (product)
+            {
+                case Pants pants:
+                    return 19.99;
+                case Shirt shirt:
+                    return 14.99;
+                case FlipFlops flipFlops:
+                    return 5.99;
+                default: // intentionally forgot Sunglasses type
+                    return -1.0;
             }
         }
     }
