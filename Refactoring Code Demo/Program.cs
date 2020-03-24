@@ -23,13 +23,14 @@ namespace Refactoring_Code_Demo
             int minOption = 0;
 
             // Update this value when you add an option to the menu!
-            int maxOption = 1;
+            int maxOption = 5;
 
             ConsoleMenu menu = new ConsoleMenu(minOption, maxOption);
 
             menu.Label = "Code Refactorings Demo!";
 
             menu.PushMenuSelection("1) Extract Variable");
+            menu.PushMenuSelection("5) Extracting Class Variable");
             menu.PushMenuSelection("0) Exit");
 
             int userInput = -1;
@@ -58,6 +59,27 @@ namespace Refactoring_Code_Demo
                         Console.WriteLine("Un-refactored method: " + Cylinders.GetSurfaceArea(c1) + Environment.NewLine);
 
                         Console.WriteLine("Refactored method: " + Cylinders.GetSurfaceAreaRefactored(c1) + Environment.NewLine);
+
+                        Console.ReadKey();
+
+                        break;
+
+                    // Extract Variable
+                    case 5:
+                        Triangle triangle = new Triangle();
+                        Square square = new Square();
+                        TriangleRefactored triangleRef = new TriangleRefactored();
+                        SquareRefactored squareRef = new SquareRefactored();
+
+                        Console.WriteLine("Un-refactored Triangle and Square:" + Environment.NewLine);
+
+                        triangle.DisplayShape();
+                        square.DisplayShape();
+
+                        Console.WriteLine("Refactored Triangle and Square:" + Environment.NewLine);
+
+                        triangleRef.DisplayShape();
+                        squareRef.DisplayShape();
 
                         Console.ReadKey();
 
