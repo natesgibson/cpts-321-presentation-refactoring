@@ -23,9 +23,9 @@ namespace Refactoring_Code_Demo
         public override bool IsShape { get; set; } = true;
 
         /// <summary>
-        /// gets or sets Radius variable.
+        /// gets or sets SideLength variable.
         /// </summary>
-        public long Radius { get; set; } = 1;
+        public long SideLength { get; set; } = 1;
 
         /// <summary>
         /// Display's shape in console.
