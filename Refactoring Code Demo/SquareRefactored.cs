@@ -10,12 +10,13 @@ namespace Refactoring_Code_Demo
     /// <summary>
     /// Square class.
     /// </summary>
-    internal class SquareRefactored : Shape
+    internal class SquareRefactored : ShapeRefactored
     {
         /// <summary>
-        /// Gets or sets color variable.
+        /// Initializes a new instance of the <see cref="SquareRefactored"/> class.
         /// </summary>
-        public override string Color { get; set; } = "blue";
+        /// <param name="color"></param>
+        public SquareRefactored(ConsoleColor color = ConsoleColor.Blue) : base(color) { }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a shape.
@@ -37,7 +38,7 @@ namespace Refactoring_Code_Demo
         /// </summary>
         public override void DisplayShape()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = this.Color;
             Console.WriteLine(" ______");
             Console.WriteLine("|      |");
             Console.WriteLine("|      |");

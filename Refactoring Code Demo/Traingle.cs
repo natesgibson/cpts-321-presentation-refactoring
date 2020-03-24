@@ -8,9 +8,10 @@ namespace Refactoring_Code_Demo
     using System;
 
     /// <summary>
-    /// Triangle class.
+    /// Traingle class (misspelled intentionally for a demo).
+    /// Can be renamed using one of Visual Studio's refactoring tools.
     /// </summary>
-    internal class Triangle
+    internal class Traingle
     {
         /// <summary>
         /// Gets or sets color variable.

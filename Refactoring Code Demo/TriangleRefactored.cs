@@ -10,12 +10,13 @@ namespace Refactoring_Code_Demo
     /// <summary>
     /// Refactored Triangle class.
     /// </summary>
-    internal class TriangleRefactored : Shape
+    internal class TriangleRefactored : ShapeRefactored
     {
         /// <summary>
-        /// Gets or sets color variable.
+        /// Initializes a new instance of the <see cref="TriangleRefactored"/> class.
         /// </summary>
-        public override string Color { get; set; } = "red";
+        /// <param name="color"></param>
+        public TriangleRefactored(ConsoleColor color = ConsoleColor.Red) : base(color) { }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a shape.
@@ -32,7 +33,7 @@ namespace Refactoring_Code_Demo
         /// </summary>
         public override void DisplayShape()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = this.Color;
             Console.WriteLine("   /\\");
             Console.WriteLine("  /  \\");
             Console.WriteLine(" /    \\");

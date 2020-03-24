@@ -69,6 +69,30 @@ namespace Refactoring_Code_Demo
 
                     // Replace Nested Conditionals with Guard Clauses
                     case 2:
+                        Player player = new Player();
+                        Boss boss = new Boss();
+
+                        Console.WriteLine("Player is currently " + player.State.ToString());
+
+                        boss.ExecuteNextAttack(player);
+
+                        player.State = Player.PlayerState.InAir;
+                        Console.WriteLine("Player is now " + player.State.ToString());
+
+                        boss.ExecuteNextAttack(player);
+
+                        player.State = Player.PlayerState.Running;
+                        Console.WriteLine("Player is now " + player.State.ToString());
+
+                        boss.ExecuteNextAttack(player);
+
+                        player.State = Player.PlayerState.Swimming;
+                        Console.WriteLine("Player is now " + player.State.ToString());
+
+                        boss.ExecuteNextAttack(player);
+
+                        Console.ReadKey();
+
                         break;
 
                     // Replace Conditional with Polymorphism
@@ -83,7 +107,7 @@ namespace Refactoring_Code_Demo
 
                     // Extract Superclass
                     case 5:
-                        Triangle triangle = new Triangle();
+                        Traingle triangle = new Traingle();
                         Square square = new Square();
                         TriangleRefactored triangleRef = new TriangleRefactored();
                         SquareRefactored squareRef = new SquareRefactored();

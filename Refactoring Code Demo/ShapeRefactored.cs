@@ -11,18 +11,27 @@ namespace Refactoring_Code_Demo
     /// <summary>
     /// Abstract shape class.
     /// </summary>
-    internal abstract class Shape
+    internal abstract class ShapeRefactored
     {
+        private ConsoleColor color;
+
         /// <summary>
-        /// Color of the shape.
-        /// Can be refactored using Visual Studio.
+        /// Initializes a new instance of the <see cref="Shape"/> class.
         /// </summary>
-        public ConsoleColor color;
+        public ShapeRefactored(ConsoleColor color = ConsoleColor.Blue)
+        {
+            this.Color = color;
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether this is a shape.
         /// </summary>
         public abstract bool IsShape { get; set; }
+
+        /// <summary>
+        /// Gets or sets color of the shape.
+        /// </summary>
+        public ConsoleColor Color { get => color; set => color = value; }
 
         /// <summary>
         /// Absctract method to display Shape.

@@ -23,6 +23,7 @@ namespace Refactoring_Code_Demo
         /// </param>
         /// <returns>
         /// Surface area of the cylinder.
+        /// Can be automatically refactored using Visual Studio.
         /// </returns>
         public static double GetSurfaceArea(Cylinder c)
         {
