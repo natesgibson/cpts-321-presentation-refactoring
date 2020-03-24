@@ -20,35 +20,37 @@ namespace Refactoring_Code_Demo
         /// <returns>True if the boss is able to execute the next attack, false otherwise</returns>
         public bool ExecuteNextAttack(Player targetPlayer)
         {
+            bool result;
             if (targetPlayer.State == Player.PlayerState.Idle)
             {
-                return Attack1();
+                result = Attack1();
             }
             else
             {
                 if (targetPlayer.State == Player.PlayerState.Walking)
                 {
-                    return Attack2();
+                    result = Attack2();
                 }
                 else
                 {
                     if (targetPlayer.State == Player.PlayerState.Running)
                     {
-                        return Attack3();
+                        result = Attack3();
                     }
                     else
                     {
                         if (targetPlayer.State == Player.PlayerState.Swimming || targetPlayer.State == Player.PlayerState.InAir)
                         {
-                            return Attack4();
+                            result = Attack4();
                         }
                         else
                         {
-                            return false;
+                            result = false;
                         }
                     }
                 }
             }
+            return result;
         }
 
         /// <summary>
