@@ -13,8 +13,8 @@
             this.shapes = new List<object>();
         }
 
-        // Gets the total area of the shapes collection
-        public double GetTotalArea()
+        // Gets the total surface area of the shapes collection
+        public double GetTotalSurfaceArea()
         {
             throw new NotImplementedException();
         }

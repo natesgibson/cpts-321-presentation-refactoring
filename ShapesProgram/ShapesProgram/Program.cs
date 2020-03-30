@@ -13,7 +13,7 @@
             {
                 shapesHandler.ParseShapes(new StreamReader(file));
 
-                Console.WriteLine("Sum of area of all shapes: " + shapesHandler.GetTotalArea());
+                Console.WriteLine("Sum of surface area of all shapes: " + shapesHandler.GetTotalSurfaceArea());
             }
         }
     }
