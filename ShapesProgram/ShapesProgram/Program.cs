@@ -13,7 +13,9 @@
             {
                 shapesHandler.ParseShapes(new StreamReader(file));
 
-                Console.WriteLine("Sum of surface area of all shapes: " + shapesHandler.GetTotalSurfaceArea());
+                Console.WriteLine("Sum of surface area of all cubes: " + shapesHandler.GetTotalSurfaceArea("Cube"));
+                Console.WriteLine("Sum of surface area of all spheres: " + shapesHandler.GetTotalSurfaceArea("Sphere"));
+                Console.WriteLine("Sum of surface area of all rectangular prisms: " + shapesHandler.GetTotalSurfaceArea("RectangularPrism"));
             }
         }
     }

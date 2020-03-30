@@ -12,24 +12,33 @@
             this.shapes = new List<object>();
         }
 
-        // Gets the total surface area of the shapes collection
-        public double GetTotalSurfaceArea()
+        // Gets the total surface area of a specific type of shape in shapes collection
+        public double GetTotalSurfaceArea(string name)
         {
             double sumSurfaceAreas = 0.0d;
 
             foreach (object shape in shapes)
             {
-                if (shape is Cube cube)
+                if (name == "Cube")
                 {
-                    sumSurfaceAreas += cube.GetSurfaceArea();
+                    if (shape is Cube cube)
+                    {
+                        sumSurfaceAreas += cube.GetSurfaceArea();
+                    }
                 }
-                else if (shape is Sphere sphere)
+                else if (name == "Sphere")
                 {
-                    sumSurfaceAreas += sphere.GetSurfaceArea();
+                    if (shape is Sphere sphere)
+                    {
+                        sumSurfaceAreas += sphere.GetSurfaceArea();
+                    }
                 }
-                else if (shape is RectangularPrism prism)
+                else if (name == "RectangularPrism")
                 {
-                    sumSurfaceAreas += prism.GetSurfaceArea();
+                    if (shape is RectangularPrism prism)
+                    {
+                        sumSurfaceAreas += prism.GetSurfaceArea();
+                    }
                 }
             }
 
