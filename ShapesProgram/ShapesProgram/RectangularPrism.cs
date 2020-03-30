@@ -19,7 +19,7 @@
 
         public double GetSurfaceArea()
         {
-            return 2 * this.width * this.length + this.height * this.length + this.height * this.width;
+            return 2 * ((this.width * this.length) + (this.height * this.length) + (this.height * this.width));
         }
     }
 }
