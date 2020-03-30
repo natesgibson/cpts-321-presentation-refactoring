@@ -44,10 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Sphere.cs" />
-    <Compile Include="Parallelogram.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rectangle.cs" />
+    <Compile Include="RectangularPrism.cs" />
     <Compile Include="ShapesHandler.cs" />
     <Compile Include="Cube.cs" />
   </ItemGroup>
