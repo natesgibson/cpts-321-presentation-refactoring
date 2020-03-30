@@ -11,7 +11,8 @@
 
         public double GetSurfaceArea()
         {
-            return 6 * (this.sideLength * this.sideLength);
+            double areaOfOneSurface = this.sideLength ^ 2;
+            return 6 * areaOfOneSurface;
         }       
     }
 }
