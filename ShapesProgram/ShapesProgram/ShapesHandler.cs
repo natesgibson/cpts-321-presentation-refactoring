@@ -12,39 +12,51 @@
             this.shapes = new List<object>();
         }
 
-        // Gets the total surface area of a specific type of shape in shapes collection
-        public double GetTotalSurfaceArea(string name)
+        // Gets the total surface area of all Cubes in shapes collection
+        public double GetTotalCubeSurfaceArea()
         {
             double sumSurfaceAreas = 0.0d;
-
             foreach (object shape in shapes)
             {
-                if (name == "Cube")
+                if (shape is Cube cube)
                 {
-                    if (shape is Cube cube)
-                    {
-                        sumSurfaceAreas += cube.GetSurfaceArea();
-                    }
-                }
-                else if (name == "Sphere")
-                {
-                    if (shape is Sphere sphere)
-                    {
-                        sumSurfaceAreas += sphere.GetSurfaceArea();
-                    }
-                }
-                else if (name == "RectangularPrism")
-                {
-                    if (shape is RectangularPrism prism)
-                    {
-                        sumSurfaceAreas += prism.GetSurfaceArea();
-                    }
+                    sumSurfaceAreas += cube.GetSurfaceArea();
                 }
             }
 
             return sumSurfaceAreas;
         }
-        
+
+        // Gets the total surface area of all Spheres in shapes collection
+        public double GetTotalSphereSurfaceArea()
+        {
+            double sumSurfaceAreas = 0.0d;
+            foreach (object shape in shapes)
+            {
+                if (shape is Sphere sphere)
+                {
+                    sumSurfaceAreas += sphere.GetSurfaceArea();
+                }
+            }
+
+            return sumSurfaceAreas;
+        }
+
+        // Gets the total surface area of all Rectangular Prisms in shapes collection
+        public double GetTotalRectangularPrismSurfaceArea()
+        {
+            double sumSurfaceAreas = 0.0d;
+            foreach (object shape in shapes)
+            {
+                if (shape is RectangularPrism prism)
+                {
+                    sumSurfaceAreas += prism.GetSurfaceArea();
+                }
+            }
+
+            return sumSurfaceAreas;
+        }
+
         // Parse all the shapes in the CSV-formatted text
         public void ParseShapes(TextReader text)
         {
