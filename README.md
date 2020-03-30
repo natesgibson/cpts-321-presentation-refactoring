@@ -15,9 +15,12 @@ For the brevity and purposes of the coding demo, the only shapes are: Square, Re
 The structure of the CSV file which the program reads is as follows:
 * Can contain any amount of shapes of these three types:
     * Circles
-        * ```circle,radius```
+        * `circle,radius`
     * Squares
-        * ```square,sideLength```
+        * `square,sideLength`
     * Rectangles
-        * ```rectangle,width,height```
+        * `rectangle,width,height`
+    * Parallelogram
+        * `parallelogram,baseLength,sideLength`
+            * `baseLength` represents one pair of parallel sides, and `sideLength` represents the other pair of parallel sides.
 * The properties after the name of the shape are positive integers. We can assume that the CSV file will be properly formatted to follow this format.
