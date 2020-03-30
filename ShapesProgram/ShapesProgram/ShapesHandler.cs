@@ -1,6 +1,5 @@
 ﻿namespace ShapesProgram
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
 
@@ -16,13 +15,84 @@
         // Gets the total surface area of the shapes collection
         public double GetTotalSurfaceArea()
         {
-            throw new NotImplementedException();
+            double sumSurfaceAreas = 0.0d;
+
+            foreach (object shape in shapes)
+            {
+                if (shape is Cube cube)
+                {
+                    sumSurfaceAreas += cube.GetSurfaceArea();
+                }
+                else if (shape is Sphere sphere)
+                {
+                    sumSurfaceAreas += sphere.GetSurfaceArea();
+                }
+                else if (shape is RectangularPrism prism)
+                {
+                    sumSurfaceAreas += prism.GetSurfaceArea();
+                }
+            }
+
+            return sumSurfaceAreas;
         }
         
         // Parse all the shapes in the CSV-formatted text
         public void ParseShapes(TextReader text)
         {
-            throw new NotImplementedException();
+            string textString = text.ReadToEnd();
+            string[] shapesDataString = textString.Split('\n');
+            
+            foreach (string shapeDataString in shapesDataString)
+            {
+                string[] shapeData = shapeDataString.Split(',');
+
+                if (shapeData.Length > 0)
+                {
+                    string name = shapeData[0];
+                    
+                    switch (name)
+                    {
+                        case "cube":
+                            int sideLength;
+
+                            if (int.TryParse(shapeData[1], out sideLength))
+                            {
+                                Cube cube = new Cube(sideLength);
+                                shapes.Add(cube);
+                            }
+
+                            break;
+                        case "sphere":
+                            int radius;
+
+                            if (int.TryParse(shapeData[1], out radius))
+                            {
+                                Sphere sphere = new Sphere(radius);
+                                shapes.Add(sphere);
+                            }
+
+                            break;
+                        case "rectangular_prism":
+                            int length;
+                            int width;
+                            int height;
+
+                            bool isLengthValid = int.TryParse(shapeData[1], out length);
+                            bool isWidthValid = int.TryParse(shapeData[2], out width);
+                            bool isHeightValid = int.TryParse(shapeData[3], out height);
+
+                            if (isLengthValid && isWidthValid && isHeightValid)
+                            {
+                                RectangularPrism prism = new RectangularPrism(length, width, height);
+                                shapes.Add(prism);
+                            }
+
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
         }
     }
 }
