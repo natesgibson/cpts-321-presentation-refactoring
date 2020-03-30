@@ -1,17 +1,17 @@
 ﻿namespace ShapesProgram
 {
-    internal class Square
+    internal class Cube
     {
         private double sideLength;
 
-        public Square(double sideLength)
+        public Cube(double sideLength)
         {
             this.sideLength = sideLength;
         }
 
-        public double GetArea()
+        public double GetSurfaceArea()
         {
-            return (this.sideLength * this.sideLength);
+            return 6 * (this.sideLength * this.sideLength);
         }       
     }
 }
