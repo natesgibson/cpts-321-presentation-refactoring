@@ -86,7 +86,11 @@
                             int width;
                             int height;
 
-                            if (int.TryParse(shapeData[1], out length) && int.TryParse(shapeData[2], out width) && int.TryParse(shapeData[3], out height))
+                            bool isLengthValid = int.TryParse(shapeData[1], out length);
+                            bool isWidthValid = int.TryParse(shapeData[2], out width);
+                            bool isHeightValid = int.TryParse(shapeData[3], out height);
+
+                            if (isLengthValid && isWidthValid && isHeightValid)
                             {
                                 RectangularPrism prism = new RectangularPrism(length, width, height);
                                 shapes.Add(prism);
