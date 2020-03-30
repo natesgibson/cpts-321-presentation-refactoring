@@ -19,7 +19,7 @@
             throw new NotImplementedException();
         }
         
-        // Parse CSV files
+        // Parse all the shapes in the CSV-formatted text
         public void ParseShapes(TextReader text)
         {
             throw new NotImplementedException();
