@@ -22,7 +22,7 @@
             double topAndBottom = 2 * (this.width * this.length);
             double frontAndBack = 2 * (this.height * this.length);
             double leftAndRight = 2 * (this.height * this.width);
-            return topAndBottom + frontAndBack +leftAndRight;
+            return topAndBottom + frontAndBack + leftAndRight;
         }
     }
 }

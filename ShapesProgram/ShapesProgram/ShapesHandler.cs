@@ -5,18 +5,18 @@
 
     internal class ShapesHandler
     {
-        List<object> shapes;
+        List<Shape> shapes;
 
         public ShapesHandler()
         {
-            this.shapes = new List<object>();
+            this.shapes = new List<Shape>();
         }
 
         // Gets the total surface area of all Cubes in shapes collection
         public double GetTotalCubeSurfaceArea()
         {
             double sumSurfaceAreas = 0.0d;
-            foreach (object shape in shapes)
+            foreach (Shape shape in shapes)
             {
                 if (shape is Cube cube)
                 {
@@ -31,7 +31,7 @@
         public double GetTotalSphereSurfaceArea()
         {
             double sumSurfaceAreas = 0.0d;
-            foreach (object shape in shapes)
+            foreach (Shape shape in shapes)
             {
                 if (shape is Sphere sphere)
                 {
@@ -46,7 +46,7 @@
         public double GetTotalRectangularPrismSurfaceArea()
         {
             double sumSurfaceAreas = 0.0d;
-            foreach (object shape in shapes)
+            foreach (Shape shape in shapes)
             {
                 if (shape is RectangularPrism prism)
                 {
