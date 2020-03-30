@@ -1,6 +1,6 @@
 ﻿namespace ShapesProgram
 {
-    internal class RectangularPrism
+    internal class RectangularPrism : Shape
     {
         private double length;
 
@@ -17,7 +17,7 @@
             this.height = height;
         }
 
-        public double GetSurfaceArea()
+        public override double GetSurfaceArea()
         {
             double topAndBottom = 2 * (this.width * this.length);
             double frontAndBack = 2 * (this.height * this.length);

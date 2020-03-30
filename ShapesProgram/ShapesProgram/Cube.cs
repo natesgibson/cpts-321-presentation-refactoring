@@ -1,6 +1,6 @@
 ﻿namespace ShapesProgram
 {
-    internal class Cube
+    internal class Cube : Shape
     {
         private double sideLength;
 
@@ -9,9 +9,9 @@
             this.sideLength = sideLength;
         }
 
-        public double GetSurfaceArea()
+        public override double GetSurfaceArea()
         {
-            double areaOfOneSurface = this.sideLength ^ 2;
+            double areaOfOneSurface = this.sideLength * this.sideLength;
             return 6 * areaOfOneSurface;
         }       
     }

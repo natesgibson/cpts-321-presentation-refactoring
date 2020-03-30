@@ -1,6 +1,6 @@
 ﻿namespace ShapesProgram
 {
-    internal class Sphere
+    internal class Sphere : Shape
     {
         private double radius;
 
@@ -9,7 +9,7 @@
             this.radius = radius;
         }
 
-        public double GetSurfaceArea()
+        public override double GetSurfaceArea()
         {
             return 4 * 3.1415926535897931d * (this.radius * this.radius);
         }
