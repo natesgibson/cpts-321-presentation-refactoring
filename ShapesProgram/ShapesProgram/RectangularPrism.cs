@@ -8,13 +8,13 @@
 
         private double height;
 
-        public RectangularPrism(double l, double w, double h)
+        public RectangularPrism(double length, double width, double height)
         {
-            this.length = l;
+            this.length = length;
 
-            this.width = w;
+            this.width = width;
 
-            this.height = h;
+            this.height = height;
         }
 
         public double GetSurfaceArea()
